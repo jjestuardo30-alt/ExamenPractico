@@ -62,3 +62,13 @@ void registrarNuevaInspeccion() {
     inspecciones[comarca][dia] += num;
     System.out.println("Inspeccion Registrada");
 }
+
+void estadoGeneral() {
+    for (int i = 0; i < COMARCAS.length; i++) {
+        int total = 0;
+        for (int d = 0; d < 7; d++)
+            total += inspecciones[i][d];
+        String msg = (total < 20) ? "RIESGO: Reforzar inspecciones" : "COBERTURA SUFICIENTE";
+        System.out.println(COMARCAS[i] + ": " + total + " → " + msg);
+    }
+}

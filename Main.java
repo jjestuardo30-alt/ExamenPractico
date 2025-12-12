@@ -8,7 +8,7 @@ public class Main {
 
     int[][] inspecciones = new int[5][7];
     boolean[] positivos = new boolean[5];
-    ArrayList<String> quarantena = new ArrayList<>();
+    ArrayList<String> cuarentena = new ArrayList<>();
 
     Scanner sc = new Scanner(System.in);
 
@@ -30,22 +30,34 @@ public class Main {
 
             switch (opcion) {
                 case 1:
-                    registrarInspeccion();
+                    RegistrarNuevaInspeccion();
                     break;
                 case 2:
-                    estadoGeneral();
+                    EstadoGeneral();
                     break;
                 case 3:
-                    gestionMovimentos();
+
+                    GestionMovimentos();
                     break;
                 case 4:
-                    incidencias();
+                    Incidencias();
                     break;
                 case 0:
-                    System.out.println("Sortint...");
+                    System.out.println("Saliendo...");
                     break;
             }
         } while (opcion != 0);
     }
 
+}
+
+void registrrInspeccion() {
+    mostrarComarcas();
+    int comarca = leerNumero(1, 5) - 1;
+    int dia = leerNumero(1, 7) - 1;
+    System.out.println("Numero de Inspecciones");
+    int num = scanner.nextInt();
+    scanner.nextLine();
+    inspecciones[comarca][dia] += num;
+    System.out.println("Inspeccion Registrada");
 }

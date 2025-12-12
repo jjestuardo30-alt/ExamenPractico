@@ -51,11 +51,12 @@ public class Main {
 
 }
 
-void registrrInspeccion() {
+void registrarNuevaInspeccion() {
     mostrarComarcas();
     int comarca = leerNumero(1, 5) - 1;
     int dia = leerNumero(1, 7) - 1;
     System.out.println("Numero de Inspecciones");
+
     int num = scanner.nextInt();
     scanner.nextLine();
     inspecciones[comarca][dia] += num;
